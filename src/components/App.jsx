@@ -56,7 +56,7 @@ export const App = () => {
         handleModalClose();
       }
     };
-    window.addEventListener('keydown', handleKeyDown);
+    window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   return (
@@ -79,9 +79,11 @@ export const App = () => {
           {images.length > 0 ? <Button onClick={handleClickMore} /> : null}
         </React.Fragment>
       )}
-      {modalOpen ? (
-        <Modal src={modalImg} alt={modalAlt} handleClose={handleModalClose} />
-      ) : null}
+      {modalOpen && (
+        <Modal src={modalImg}
+          alt={modalAlt}
+          handleClose={handleModalClose} />
+      )}
     </div>
   );
 };
