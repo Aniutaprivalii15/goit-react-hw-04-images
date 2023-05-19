@@ -79,9 +79,9 @@ export const App = () => {
           {images.length > 0 ? <Button onClick={handleClickMore} /> : null}
         </React.Fragment>
       )}
-      {modalOpen ? (
+      {modalOpen && (
         <Modal src={modalImg} alt={modalAlt} handleClose={handleModalClose} />
-      ) : null}
+      )}
     </div>
   );
 };
