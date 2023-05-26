@@ -11,7 +11,7 @@ export const App = () => {
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentSearch, setCurrentSearch] = useState('');
-  const [isShowButton, setIsShowButton ] = useState('');
+  const [setIsShowButton ] = useState(true);
   const [pageNr, setPageNr] = useState(1);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImg, setModalImg] = useState('');
@@ -31,7 +31,7 @@ export const App = () => {
     setIsShowButton(true);
     setPageNr(2);
   };
-
+  // const { isShowButton} = this.state;
   const handleClickMore = async () => {
     setIsLoading({ isLoading: true });
     const response = await fetchImages(currentSearch, pageNr);
