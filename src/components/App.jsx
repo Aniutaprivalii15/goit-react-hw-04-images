@@ -11,7 +11,7 @@ export const App = () => {
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentSearch, setCurrentSearch] = useState('');
-  const [setIsShowButton ] = useState(true);
+  const [isShowButton, setIsShowButton ] = useState(true);
   const [pageNr, setPageNr] = useState(1);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImg, setModalImg] = useState('');
@@ -28,7 +28,7 @@ export const App = () => {
     setImages(response);
     setIsLoading(false);
     setCurrentSearch(inputForSearch.value);
-    setIsShowButton(true);
+    setIsShowButton(false);
     setPageNr(2);
   };
   // const { isShowButton} = this.state;
@@ -78,7 +78,7 @@ export const App = () => {
           <ImageGallery onImageClick={handleImageClick} images={images} />
       
           {isLoading && (pageNr >= 2) ? <Loader /> : null}
-          {images.length > 0 ? <Button onClick={handleClickMore} /> : null}
+          {isShowButton ? <Button onClick={handleClickMore} /> : null}
         </React.Fragment>
       )}
       {modalOpen && (
