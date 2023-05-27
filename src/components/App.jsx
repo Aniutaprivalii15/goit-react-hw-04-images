@@ -11,7 +11,7 @@ export const App = () => {
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentSearch, setCurrentSearch] = useState('');
-  const [isShowButton, setIsShowButton ] = useState(true);
+  const [isShowButton, setIsShowButton ] = useState(false);
   const [pageNr, setPageNr] = useState(1);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImg, setModalImg] = useState('');
@@ -28,7 +28,7 @@ export const App = () => {
     setImages(response);
     setIsLoading(false);
     setCurrentSearch(inputForSearch.value);
-    setIsShowButton(false);
+    setIsShowButton(true);
     setPageNr(2);
   };
   // const { isShowButton} = this.state;
